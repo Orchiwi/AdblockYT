@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove Adblock Thing
 // @namespace    http://tampermonkey.net/
-// @version      2.0
+// @version      2.4
 // @description  Removes Adblock Thing
 // @author       Orchiwi
 // @match        https://www.youtube.com/*
@@ -140,6 +140,8 @@
             const mastheadAd = document.querySelector('.ytd-video-masthead-ad-v3-renderer');
             const sponsor = document.querySelectorAll("div#player-ads.style-scope.ytd-watch-flexy, div#panels.style-scope.ytd-watch-flexy");
             const nonVid = document.querySelector(".ytp-ad-skip-button-modern");
+            const youtubepremium = document.getElementById('masthead-ad');
+
 
             if (ad)
             {
@@ -155,6 +157,7 @@
             sparklesContainer?.remove();
             mainContainer?.remove();
             feedAd?.remove();
+            youtubepremium?.remove();
             mastheadAd?.remove();
             sponsor?.forEach((element) => {
                  if (element.getAttribute("id") === "panels") {
